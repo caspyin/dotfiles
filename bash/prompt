@@ -68,14 +68,14 @@ function bash_prompt_cmd() {
   basedir=`basename $ALTPWD`
   basedir_length=${#basedir}
   
-  vcprompt=`vcprompt`
-  vcprompt_length=${#vcprompt}
+  # vcprompt=`vcprompt`
+  # vcprompt_length=${#vcprompt}
   
   # rbenv
-  ruby_prompt_path=`which rbenv`
-  ruby_prompt=`$ruby_prompt_path version-name`
-  ruby_prompt_length=${#ruby_prompt}
-  padding=$(( COLUMNS - username_length - basedir_length - vcprompt_length - ruby_prompt_length + 30))
+  # ruby_prompt_path=`which rbenv`
+  # ruby_prompt=`$ruby_prompt_path version-name`
+  # ruby_prompt_length=${#ruby_prompt}
+  # padding=$(( COLUMNS - username_length - basedir_length - vcprompt_length - ruby_prompt_length + 30))
   
   # rvm
   # ruby_prompt_path=`which rvm-prompt`
@@ -88,7 +88,8 @@ function bash_prompt_cmd() {
   # PS1="\n[\u] \W \$(vcprompt) `padding`\n➤ "
   # PS1="\n[\u] \W \$(vcprompt) `padding`\n★ "
   # PS1="\n[\u] \W \$(vcprompt) `padding`\n✲ "
-  PS1="\n[\u] \W \$(vcprompt) `padding`\n✖ "
+  # PS1="\n[\u] \W \$(vcprompt) `padding`\n✖ "
+  PS1="\n[\u] \W \n✖ "
   
 }
 
@@ -103,3 +104,7 @@ function prompt_command() {
 }
 
 PROMPT_COMMAND=prompt_command
+
+# TODO: Enable dir colors for linux
+# TODO: Remove mac specific env prompt stuff
+# TODO: Disable call to missing theme for linux
