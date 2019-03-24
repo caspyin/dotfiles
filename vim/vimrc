@@ -267,13 +267,13 @@ nnoremap <C-l> <C-w>l
 " Find
 " =================================
 
-" ,f to launch find
-nnoremap <leader>ff :find *
+" Launch find
+nnoremap <leader>f :find *
 
-" ,fs to launch find in a horizontally split window
+" Launch find in a horizontally split window
 nnoremap <leader>fs :sfind *
 
-" ,fv to launch find in a vertically split window
+" Launch find in a vertically split window
 nnoremap <leader>fv :vert sfind *
 
 " Command-line window
@@ -284,6 +284,18 @@ nnoremap :: q:
 
 " Remap // to open the command-line search window (q/)
 nnoremap // q/
+
+" Default Directory – Netrw
+" =================================
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
 
 
 " Miscellaneous
@@ -363,3 +375,7 @@ let g:airline_theme = 'powerlineish'
 " when its in the .git folder
 " set tags=.git/tags
 
+" Local config
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif

@@ -22,6 +22,9 @@ Change into the project directory and run the setup.
 
     cd dotfiles
     bin/setup
+    
+    # After successful setup, reload your shell env
+    source ~/.bashrc
 
 Features
 --------
@@ -60,6 +63,6 @@ This project is licensed under the terms specified in the [`LICENSE.txt`] file.
 About
 -----
 
-This README was crafted with love and by following README best practices from
+This README was crafted with love and inspired by the README best practices of
 https://github.com/jehna/readme-best-practices
 
